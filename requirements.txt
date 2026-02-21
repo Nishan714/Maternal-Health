@@ -1,6 +1,8 @@
-numpy
 pandas
+numpy
 scikit-learn
+imbalanced-learn
+shap
 matplotlib
 seaborn
-tensorflow
+joblib
