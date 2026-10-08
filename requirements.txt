@@ -1,8 +1,9 @@
 pandas
 numpy
-scikit-learn
-imbalanced-learn
-shap
 matplotlib
 seaborn
-joblib
+scikit-learn==1.5.0
+imbalanced-learn
+xgboost
+shap
+scipy
