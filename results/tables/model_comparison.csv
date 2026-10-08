@@ -1,0 +1,11 @@
+Model,Mean Weighted F1,Std Weighted F1
+Logistic Regression,0.8738,0.0116
+Decision Tree,0.9258,0.0074
+Random Forest,0.9598,0.0078
+SVM,0.888,0.0205
+KNN,0.8966,0.008
+Naive Bayes,0.9108,0.0403
+Gradient Boosting,0.9594,0.0049
+AdaBoost,0.8759,0.078
+XGBoost,0.9556,0.0096
+ANN,0.9442,0.0051

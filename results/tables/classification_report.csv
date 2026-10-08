@@ -1,0 +1,6 @@
+Class,Precision,Recall,F1,Support
+High,1.0,0.99,0.99,95
+Low,0.97,0.99,0.98,143
+Unknown,0.0,0.0,0.0,3
+macro avg,0.66,0.66,0.66,241
+weighted avg,0.97,0.98,0.98,241

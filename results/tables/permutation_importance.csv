@@ -1,0 +1,12 @@
+Feature,Mean Importance,Std
+Preexisting Diabetes,0.072199,0.008743
+Gestational Diabetes,0.059751,0.011165
+BMI,0.03029,0.008714
+Mental Health,0.024481,0.007526
+Heart Rate,0.016598,0.009642
+BS,0.014523,0.006224
+Systolic BP,0.011618,0.003105
+Previous Complications,0.008299,0.003711
+Diastolic,0.002075,0.00533
+Body Temp,0.000415,0.001245
+Age,0.000415,0.002235

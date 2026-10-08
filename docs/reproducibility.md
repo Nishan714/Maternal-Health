@@ -1,132 +1,107 @@
-\# Reproducibility
+﻿# Reproducibility
 
+## Historical experiment
 
+This repository preserves the implementation used for the published study:
 
-\## Historical implementation
+**Maternal Health Risk Classification Using Machine Learning: A Study Based on Clinical Data from Bangladesh**
 
+The preserved notebook is:
 
+`notebooks/final_experiment.ipynb`
 
-The main implementation is:
+The notebook contains the historical experiment, including preprocessing, model comparison, cross-validation, final evaluation, statistical comparison, and interpretability analysis.
 
+## Important: this is a historical research artifact
 
+The repository intentionally does **not** silently rewrite the original notebook to match current software versions or retrospectively modify the published experiment.
 
-`notebooks/final\_experiment.ipynb`
+The published paper is the primary reference for the study's reported methodology and results.
 
+The notebook is the primary implementation record.
 
+## Dataset
 
-This notebook preserves the historical experiment associated with the published paper.
+The raw dataset is not included in this repository.
 
+See:
 
+`data/README.md`
 
-\## Environment
+for the original dataset source and attribution information.
 
+## Historical file path
 
+The preserved notebook originally loaded the dataset using a Google Colab-style path:
 
-The requirements file specifies:
+`/content/Final.csv`
 
+Therefore, the notebook is not expected to run unchanged on every local machine.
 
+For reproduction, download the original dataset and modify only the input path required for the local environment.
 
-`scikit-learn==1.5.0`
+## Environment
 
+The historical notebook explicitly installed:
 
+- scikit-learn 1.5.0
+- imbalanced-learn
+- XGBoost
+- SHAP
+- NumPy
+- pandas
+- matplotlib
+- seaborn
+- SciPy
 
-along with the principal packages used by the notebook.
+Only the scikit-learn version was explicitly pinned in the historical notebook.
 
+The repository therefore does **not** claim byte-for-byte reproducibility across arbitrary future package versions.
 
+## Experimental procedure
 
-Exact reproduction should be performed in a clean environment using the documented dependency versions.
+The historical implementation performs:
 
+1. Dataset loading and inspection.
+2. Missing target labels represented as `Unknown`.
+3. Stratified 80/20 train/test split.
+4. Numerical preprocessing and standardization.
+5. Categorical preprocessing.
+6. SMOTE within the model-evaluation pipeline.
+7. Stratified 5-fold cross-validation.
+8. Comparison of ten machine-learning classifiers.
+9. Selection of Random Forest.
+10. Final evaluation on the held-out test set.
+11. ROC-AUC analysis.
+12. Gini feature importance.
+13. Permutation importance.
+14. SHAP analysis.
 
+## Published-paper / notebook discrepancy
 
-\## Randomness
+An important historical discrepancy is documented here rather than hidden.
 
+The published paper describes **mean imputation** for numerical variables.
 
+The preserved notebook uses **median imputation** for numerical variables.
 
-The historical implementation uses `random\_state=42` for the main stochastic components, including:
+The historical notebook has intentionally been retained rather than retrospectively altered. This repository therefore does not claim that the notebook and the published methodological description are identical in this respect.
 
+## Reproduction expectations
 
+A researcher attempting reproduction should:
 
-\- train/test splitting
+1. Obtain the dataset from the original Mendeley source.
+2. Verify the downloaded dataset against the published dataset description.
+3. Use an environment compatible with the historical dependencies.
+4. Adapt the notebook's dataset path to the local environment.
+5. Run the notebook from the beginning.
+6. Compare the resulting outputs with the verified historical results stored under `results/`.
 
-\- cross-validation
+Small numerical differences may occur when package versions, numerical libraries, or execution environments differ.
 
-\- SMOTE
+## Scope
 
-\- Random Forest
+This repository is intended as a research companion to the published paper.
 
-\- Gradient Boosting
-
-\- AdaBoost
-
-\- XGBoost
-
-\- MLP
-
-
-
-\## Historical paper/code discrepancy
-
-
-
-The paper describes numerical mean imputation.
-
-
-
-The historical notebook uses:
-
-
-
-`SimpleImputer(strategy='median')`
-
-
-
-This discrepancy is intentionally documented rather than silently corrected.
-
-
-
-The repository therefore represents the historical implementation, not a newly reconstructed experiment.
-
-
-
-\## Reported outputs
-
-
-
-The notebook contains the historical experiment outputs used to support the published results, including:
-
-
-
-\- cross-validation model comparison
-
-\- paired t-test
-
-\- held-out test metrics
-
-\- ROC-AUC
-
-\- Random Forest feature importance
-
-\- permutation importance
-
-\- SHAP analyses
-
-
-
-\## SHAP limitation
-
-
-
-The historical notebook successfully performs global SHAP analyses but its multiclass waterfall-plot section does not execute successfully because of the shape of the multiclass SHAP output.
-
-
-
-This is retained as part of the historical notebook rather than being presented as a fully successful visualization.
-
-
-
-\## Reproduction status
-
-
-
-Exact environment-level reproduction should be considered \*\*not yet independently verified\*\* until the notebook is executed successfully in an environment matching the required dependency versions.
-
+It is not presented as a clinical software package or a clinically validated decision-support system.

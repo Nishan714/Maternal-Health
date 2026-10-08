@@ -1,36 +1,55 @@
-\# Dataset
+﻿# Dataset
 
+## Source
 
+This project uses the **Maternal Health Risk Assessment Dataset** published by:
 
-The raw maternal-health dataset is intentionally not included in this repository.
+> Mojumdar, M. U., Assaduzzaman, M., Sarker, D., Shifa, H. A., Sajeeb, M. A. H., Bari, S., Chakraborty, N. R., & Alam, M. J. (2024). *Maternal Health Risk Assessment Dataset*. Mendeley Data, Version 1.
 
+Dataset DOI:
 
+**10.17632/p5w98dvbbk.1**
 
-The historical experiment uses `Final.csv`, containing 1,205 records and 11 predictor variables plus the `Risk Level` target.
+Dataset record:
 
+https://data.mendeley.com/datasets/p5w98dvbbk/1
 
+The published paper describes the dataset used in this study as containing **1,205 records and 12 columns**, consisting of 11 predictors and the `Risk Level` target.
 
-The dataset was obtained from an open-access maternal-health dataset cited by the published paper.
+## Variables used
 
+The predictors used in the published study were:
 
+- Age
+- Systolic BP
+- Diastolic BP
+- BS
+- Body Temp
+- BMI
+- Previous Complications
+- Preexisting Diabetes
+- Gestational Diabetes
+- Mental Health
+- Heart Rate
 
-Before redistributing the raw dataset, verify the original dataset's license and redistribution conditions.
+Target:
 
+- Risk Level
 
+The historical experiment treated missing `Risk Level` values as a separate `Unknown` class.
 
-For reproduction:
+## Redistribution
 
+The Mendeley dataset record currently lists the dataset under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.
 
+The raw dataset is **not redistributed in this repository**. Users should obtain the dataset directly from the original Mendeley Data record and comply with its current licensing and attribution requirements.
 
-1\. Obtain the dataset from its original source.
+## Reproduction note
 
-2\. Save the required CSV as `Final.csv`.
+The preserved historical notebook expects a local/Colab file named:
 
-3\. Place it in the working directory expected by `notebooks/final\_experiment.ipynb`.
+`Final.csv`
 
-4\. Run the notebook using the documented environment.
+The repository does not include that raw file. The notebook should therefore be treated as a record of the historical experiment rather than a zero-configuration executable script.
 
-
-
-The repository does not claim ownership of the underlying dataset.
-
+Before reproducing the experiment, download the dataset from the original source and prepare the file expected by the notebook.

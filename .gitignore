@@ -28,3 +28,6 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+# Track verified research result tables
+!results/tables/
+!results/tables/*.csv
